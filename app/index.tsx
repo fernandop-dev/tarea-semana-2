@@ -1,6 +1,4 @@
-import React from "react";
-import Ej3Reloj from "./screens/Ej3Reloj";
-
+import Ej4Carga from "./screens/Ej4Carga";
 export default function Index() {
-  return <Ej3Reloj />;
+  return <Ej4Carga />;
 }
