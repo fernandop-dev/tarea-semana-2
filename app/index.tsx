@@ -1,4 +1,5 @@
-import Ej4Carga from "./screens/Ej4Carga";
+import MenuPrincipal from "./screens/MenuPrincipal";
+
 export default function Index() {
-  return <Ej4Carga />;
+  return <MenuPrincipal />;
 }
