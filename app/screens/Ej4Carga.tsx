@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 export default function Ej4Carga() {
-  const [cargando, setCargando] = useState(true);
+  const [mostrarCarga, setMostrarCarga] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCargando(false);
-    }, 3000); // 3 segundos
-
-    return () => clearTimeout(timer);
+    const intervalo = setInterval(() => {
+      setMostrarCarga((prev) => !prev);
+    }, 4000); // 🔁 Alterna cada 4 segundos entre carga y bienvenida
+    return () => clearInterval(intervalo);
   }, []);
 
   return (
     <View style={styles.container}>
-      {cargando ? (
+      {mostrarCarga ? (
         <>
           <ActivityIndicator size="large" color="#2E2D63" />
           <Text style={styles.text}>Cargando...</Text>
@@ -30,10 +29,12 @@ export default function Ej4Carga() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F9F9F9",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    width: "100%",
+    height: 350,
   },
   text: {
     fontSize: 24,
